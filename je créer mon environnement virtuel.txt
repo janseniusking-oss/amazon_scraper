@@ -16,7 +16,29 @@ Dans amazon_scraper j'ajoute le fichier main.py
 Dans amazon_scraper j'ajoute le fichier config.py
 dans app/models/produit.py je commence à coder(code expliquer)
 je créer mon dossier .gitignore
-
-
-
-
+dans app/scraper/amazon_scraper.py je code le scraper avec requests et beautifulsoup4
+dans app/controllers/scraping_controller.py je code le contrôleur qui fait le lien entre le scraper et la base
+dans app/views/console_view.py je code la fonction afficher_produits pour voir les résultats dans le terminal
+dans main.py j'ajoute le code pour lancer le scraping
+je lance python main.py dans le terminal, mais il y a 0 produit et j'ai une erreur HTTP 202
+je comprends qu'Amazon me bloque car il détecte que je suis un robot
+j'ajoute des headers plus complets et une pause time.sleep() dans amazon_scraper.py pour faire plus humain
+je relance python main.py, cette fois j'ai le code 200 mais toujours 0 produit et la page est vide
+je comprends que requests ne suffit plus pour contourner la protection d'Amazon
+je décide d'utiliser Selenium pour ouvrir un vrai navigateur Chrome piloté par le code
+j'installe selenium et webdriver-manager avec pip install selenium webdriver-manager
+je réécris tout le fichier app/scraper/amazon_scraper.py avec Selenium pour que Chrome aille chercher la page à ma place
+je m'assure que le fichier .gitignore est bien à la racine du dossier amazon_scraper (et non dans un sous-dossier)
+je vérifie que le .gitignore contient bien __pycache__/, *.pyc, env/, data/*.db, debug_amazon.html, .vscode/
+j'ouvre le terminal et je vérifie que je suis bien dans l'environnement virtuel (env)
+je configure Git avec mon nom et mon email via git config --global user.name et user.email
+j'installe Git pour Windows car le terminal me disait que la commande git n'était pas reconnue
+je relance VS Code et je vérifie que git fonctionne avec git --version
+j'initialise le dépôt Git avec git init
+j'ajoute tous les fichiers avec git add .
+je fais mon premier commit avec git commit -m "Premier commit : Mon scraper Amazon fonctionnel"
+je crée un nouveau dépôt sur GitHub nommé amazon_scraper
+je lie mon dossier local à GitHub avec git remote add origin https://github.com/janseniusing-oss/amazon_scraper.git
+je renomme la branche principale en main avec git branch -M main
+j'envoie mon projet sur GitHub avec git push -u origin main
+je vérifie sur GitHub que mon code est bien en ligne (et que les dossiers env/ et data/*.db ne sont pas envoyés)
